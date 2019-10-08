@@ -56,16 +56,16 @@ Inclua os trechos de código que respondem as perguntas abaixo:
 
 ### Qual é o custo médio dos animais do tipo cachorro?
 
-    Animal.where(animal_type: 'Cachorro').average(:monthly_cost).to_f
+    Animal.where(animal_kind: 'Cachorro').average(:monthly_cost).to_f
 
 ### Quantos cachorros existem no sistema?
 
-    Animal.where(animal_type: 'Cachorro').count
+    Animal.where(animal_kind: 'Cachorro').count
 
 ### Qual o nome dos donos dos cachorros (Array de nomes)
 
     dog_owners_names = []
-    Animal.where(animal_type: 'Cachorro').each do |dog|
+    Animal.where(animal_kind: 'Cachorro').each do |dog|
     	dog_owners_names << dog.person.name
     end
     puts dog_owners_names
